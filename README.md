@@ -69,4 +69,7 @@
 
    ```bin/kafka-console-producer --broker-list localhost:9092 --topic demo-topic <bin/customers.csv```
    
+   Example :
    
+![image](https://github.com/kcaayush2158/Kafka-Mastering-Message-Routing-with-Specific-Partitions/assets/28734661/0a7bcb7c-82e4-40c6-8492-186785af8fd6)
+
