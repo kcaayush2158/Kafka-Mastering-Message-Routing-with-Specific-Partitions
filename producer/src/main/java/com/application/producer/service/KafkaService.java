@@ -15,27 +15,21 @@ public class KafkaService {
 
 
     public void sendMessageToTopic(String message){
-//        CompletableFuture<SendResult<String, Object>> completableFuture = kafkaTemplate.send("demo-test",message);
-//        completableFuture.whenComplete((result, ex)->{
-//            if (ex == null) {
-//                System.out.println("Sent message=[" + message +
-//                        "] with offset=[" + result.getRecordMetadata().offset() + "]");
-//            } else {
-//                System.out.println("Unable to send message=[" +
-//                        message + "] due to : " + ex.getMessage());
-//            }
-//        });
-
-        kafkaTemplate.send("demo-topic", 2 , null , "hello from message one");
-        kafkaTemplate.send("demo-topic", 2 , null , "hello from message two");
-        kafkaTemplate.send("demo-topic", 2 , null , "hello from message three");
-        kafkaTemplate.send("demo-topic", 2 , null , "hello from message four");
-        kafkaTemplate.send("demo-topic", 2 , null , "hello from message five");
+        CompletableFuture<SendResult<String, Object>> completableFuture = kafkaTemplate.send("demo-test",message);
+        completableFuture.whenComplete((result, ex)->{
+            if (ex == null) {
+                System.out.println("Sent message=[" + message +
+                        "] with offset=[" + result.getRecordMetadata().offset() + "]");
+            } else {
+                System.out.println("Unable to send message=[" +
+                        message + "] due to : " + ex.getMessage());
+            }
+        });
     }
 
     public void sendEventsToTopic(Customer customer) {
         try {
-            CompletableFuture<SendResult<String, Object>> future = kafkaTemplate.send("demo-topic", customer);
+            CompletableFuture<SendResult<String, Object>> future = kafkaTemplate.send("demo-test2", customer);
             future.whenComplete((result, ex) -> {
                 if (ex == null) {
                     System.out.println("Sent message=[" + customer.toString() +
