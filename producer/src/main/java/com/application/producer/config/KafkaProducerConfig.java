@@ -15,7 +15,7 @@ import java.util.Map;
 public class KafkaProducerConfig {
     @Bean
     public NewTopic createTopic(){
-        return new NewTopic("demo", 3, (short) 1);
+        return new NewTopic("demo-topic", 3, (short) 1);
     }
 
     @Bean
