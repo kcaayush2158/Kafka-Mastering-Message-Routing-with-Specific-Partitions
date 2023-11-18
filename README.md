@@ -14,7 +14,7 @@
 
 3. Create topic
 
-    ```sh bin/kafka-topics.sh --bootstrap-server localhost:9092 --create --topic NewTopic --partitions 3 --replication-factor 1```
+    ```sh bin/kafka-topics.sh --bootstrap-server localhost:9092 --create --topic demo-topic --partitions 3 --replication-factor 1```
 
 4. list out all topic names
 
@@ -22,16 +22,16 @@
 
 5. Describe topics
   
-    ``` sh bin/kafka-topics.sh --bootstrap-server localhost:9092 --describe --topic NewTopic ```
+    ``` sh bin/kafka-topics.sh --bootstrap-server localhost:9092 --describe --topic demo-topic ```
 
 6. Produce message
 
-    ```sh bin/kafka-console-producer.sh --broker-list localhost:9092 --topic NewTopic```
+    ```sh bin/kafka-console-producer.sh --broker-list localhost:9092 --topic demo-topic```
 
 
 7. consume message
 
-    ``` sh bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic NewTopic --from-beginning ```
+    ``` sh bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic demo-topic --from-beginning ```
 
 
 ## Confluent Kafka Community Edition in local ##
@@ -46,7 +46,7 @@
 
 3. Create topic
 
-    ```bin/kafka-topics --bootstrap-server localhost:9092 --create --topic NewTopic1 --partitions 3 --replication-factor 1```
+    ```bin/kafka-topics --bootstrap-server localhost:9092 --create --topic demo-topic --partitions 3 --replication-factor 1```
 
 4. list out all topic names
 
@@ -54,19 +54,19 @@
 
 5. Describe topics
   
-    ``` bin/kafka-topics --bootstrap-server localhost:9092 --describe --topic NewTopic1 ```
+    ``` bin/kafka-topics --bootstrap-server localhost:9092 --describe --topic demo-topic ```
 
 6. Produce message
 
-    ```bin/kafka-console-producer --broker-list localhost:9092 --topic NewTopic1```
+    ```bin/kafka-console-producer --broker-list localhost:9092 --topic demo-topic```
 
 
 7. consume message
 
-    ```bin/kafka-console-consumer --bootstrap-server localhost:9092 --topic NewTopic1 --from-beginning ```
+    ```bin/kafka-console-consumer --bootstrap-server localhost:9092 --topic demo-topic --from-beginning ```
     
 8. Send CSV File data to kafka    
 
-   ```bin/kafka-console-producer --broker-list localhost:9092 --topic NewTopic1 <bin/customers.csv```
+   ```bin/kafka-console-producer --broker-list localhost:9092 --topic demo-topic <bin/customers.csv```
    
    
